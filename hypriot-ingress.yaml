@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hypriot
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hypriot
+          servicePort: 80
+      - path: /dashboard
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 9090
